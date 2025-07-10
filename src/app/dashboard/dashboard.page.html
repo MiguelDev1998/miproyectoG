@@ -1,12 +1,27 @@
-<!-- Barra superior -->
+<h2>Lista de partidas</h2>
 
-<!-- Sidebar (overlay) -->
+<div class="cards-container">
+  <div class="card" *ngFor="let p of partidas">
+    <div class="card-content">
+      <!-- Columna izquierda: BORRAR -->
+      <div class="left-actions">
+        <button (click)="borrarPartida(p)" class="btn borrar">BORRAR</button>
+      </div>
 
+      <!-- Información central -->
+      <div class="info">
+        <h3>PARTIDA: {{ p.partida }} {{ p.origen }} BACHE: {{ p.bache }}</h3>
+        <p><strong>RESPONSABLE:</strong> {{ p.responsable }}</p>
+        <p><strong>PRODUCTO:</strong> {{ p.producto }}</p>
+        <p><strong>PROCESO:</strong> {{ p.proceso }}</p>
+        <p><strong>FECHA:</strong> {{ p.fecha | date: 'dd/MM/yyyy' }}</p>
+      </div>
 
-<!-- Contenido principal -->
-<div class="content">
-  <h2>Bienvenido al Dashboard 🎉</h2>
+      <!-- Columna derecha: CERRAR TURNO / PESAR -->
+      <div class="right-actions">
+        <button (click)="cerrarTurno(p)" class="btn cerrar">CERRAR TURNO</button>
+        <button (click)="pesarPartida(p)" class="btn pesar">PESAR</button>
+      </div>
+    </div>
+  </div>
 </div>
-
-<!-- Fondo oscuro cuando menú abierto -->
-

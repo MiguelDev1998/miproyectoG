@@ -1,0 +1,44 @@
+<!-- 1. Encabezado báscula -->
+<div class="scale-header">
+  <h2>BÁSCULA [BTPROD21]</h2>
+  <div class="current-weight">0.00 qq.</div>
+</div>
+
+<!-- 2. Selector de cliente -->
+<div class="client-select">
+  <label for="cliente">Cliente</label>
+  <input
+    list="clientes"
+    id="cliente"
+    [(ngModel)]="cliente"
+    name="cliente"
+    placeholder="Selecciona cliente"
+  />
+  <datalist id="clientes">
+    <option *ngFor="let c of clientes" [value]="c"></option>
+  </datalist>
+</div>
+
+<!-- 3. Detalle de pesos (vacío por ahora) -->
+<div class="peso-detalle">
+  <h3>DETALLE DE PESOS</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Peso Neto</th>
+        <th>Tara Nylon</th>
+        <th>Tara Yute</th>
+        <th>Peso Bruto</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- sin filas hasta que haya datos -->
+    </tbody>
+  </table>
+</div>
+
+<!-- 4. Botones en esquina inferior derecha -->
+<div class="actions">
+  <button (click)="salir()" class="btn salir">SALIR</button>
+  <button (click)="pesar()" class="btn pesar">PESAR</button>
+</div>

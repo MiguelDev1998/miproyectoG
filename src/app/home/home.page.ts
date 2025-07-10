@@ -21,7 +21,7 @@ export class HomePage {
   {}
 
    iniciarSesion() {
-    if (this.usuario === 'admin' && this.contrasena === '1234') {
+    if (this.usuario === 'a' && this.contrasena === '1') {
       this.authService.login();                    // marca como logueado
       this.router.navigateByUrl('/dashboard');      // navega al dashboard
     } else {

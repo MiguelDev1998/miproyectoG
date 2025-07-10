@@ -1,33 +1,57 @@
-
-<h2>Crear Partida</h2>
-<form class="formulario">
+<form class="formulario" (ngSubmit)="grabar()">
   <div class="fila">
-    <input type="text" placeholder="Partida">
-    <input type="text" placeholder="Origen de café">
-    <input type="number" placeholder="Bache" value="1">
+    <input
+      type="text"
+      placeholder="Partida"
+      [(ngModel)]="partida"
+      name="partida"
+      required
+    />
+    <input
+      type="text"
+      placeholder="Origen de café"
+      [(ngModel)]="origen"
+      name="origen"
+      required
+    />
+    <input
+      type="number"
+      placeholder="Bache"
+      [(ngModel)]="bache"
+      name="bache"
+      min="1"
+    />
+  </div>
+    
+
+
+  <div class="fila">
+    <select [(ngModel)]="producto" name="producto">
+      <option value="" disabled selected>Producto de Café</option>
+      <option value="Café Maduro">Cafe Maduro</option>
+      <option value="Café oro">Café oro</option>
+      <option value="Café pergamino">Café pergamino</option>
+    </select>
+
+    <select [(ngModel)]="proceso" name="proceso">
+      <option value="" disabled selected>Tipo de proceso</option>
+      <option value="Lavado">Lavado</option>
+      <option value="Natural">Natural</option>
+    </select>
   </div>
 
   <div class="fila">
-    <select>
-      <option disabled selected>Producto de Café</option>
-      <option>Cafe maduro</option>
-      <option>Café oro</option>
-      <option>Café pergamino</option>
-    </select>
-
-    <select>
-      <option disabled selected>Tipo de proceso</option>
-      <option>Lavado</option>
-      <option>Natural</option>
-    </select>
-  </div>
-
-  <div class="fila">
-    <input type="text" placeholder="Responsable">
+    <input
+      type="text"
+      placeholder="Responsable"
+      [(ngModel)]="responsable"
+      name="responsable"
+      required
+    />
   </div>
 
   <div class="botones">
     <button class="btn azul" type="submit">GRABAR</button>
-    <button class="btn rojo" type="reset">LIMPIAR</button>
+    <button class="btn rojo" type="button" (click)="limpiar()">LIMPIAR</button>
   </div>
 </form>
