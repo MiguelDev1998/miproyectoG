@@ -1,0 +1,58 @@
+.topbar {
+  text-align: left;
+  margin: 20px;
+}
+
+.topbar h1 {
+  font-size: 24px;
+  margin: 0;
+}
+
+.subtitle {
+  color: darkred;
+  margin: 5px 0 15px;
+}
+
+.formulario {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.fila {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+input, select {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+  min-width: 200px;
+}
+
+.botones {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.btn {
+  padding: 10px 30px;
+  font-size: 16px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.btn.azul {
+  background-color: #007bff;
+}
+
+.btn.rojo {
+  background-color: #dc3545;
+}

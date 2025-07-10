@@ -1,0 +1,23 @@
+<ng-container *ngIf="menuVisible">
+<!-- Topbar compartido -->
+<div class="topbar">
+  <button class="menu-btn" (click)="abrirMenu()">☰ </button>
+  <h1> BD</h1>
+</div>
+
+<!-- Sidebar (overlay) compartido -->
+<div class="sidebar" [class.open]="menuAbierto">
+  <button type="button" class="close-btn" (click)="cerrarMenu()">×</button>
+  <button type="button" class="sidebar-btn" (click)="navegar('/dashboard')">Dashboard</button>
+  <button type="button" class="sidebar-btn" (click)="navegar('/crear-partida')">Crear partida</button>
+  <button type="button" class="sidebar-btn" (click)="navegar('/')">Salir</button>
+</div>
+
+<!-- Fondo oscuro cuando menú abierto -->
+<div class="overlay" [class.show]="menuAbierto" (click)="cerrarMenu()"></div>
+</ng-container>
+
+<!-- Aquí cargan todas las páginas -->
+<main class="main-content">
+  <router-outlet></router-outlet>
+</main>
